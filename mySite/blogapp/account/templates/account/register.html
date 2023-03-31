@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="account/css/style.css">
+{% endblock  %}
+
+{% block title %}Register{% endblock  %}
+
+{% block content %}
+<div class="container mt-3 d-flex justify-content-center align-items-center" style="height: 100vh;" >
+    <div class="card bg-dark">
+        <div class="card-body" style="width: 600px; margin: 0 auto;">
+            <h1 class="card-title text-center h3" style="color: #fff;">Üye Ol</h1>
+            <hr class="login-hr">
+
+
+
+            <form style="color: #fff;" method="POST">
+                {% csrf_token %}
+                {% if error %}
+                    <div class="alert alert-danger">
+                        {{error}}
+                    </div>
+                {% endif %}
+                <div class="mb-3">
+                    <label for="username" class="form-label">Kullanıcı İsmi</label>
+                    <input type="text" class="form-control bg-dark" name="username" value="{{username}}" style="color:white;">
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">E-Mail</label>
+                    <input type="email" class="form-control bg-dark" name="email" value="{{email}}" style="color:white;">
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label for="firstname" class="form-label">İsim</label>
+                        <input type="text" class="form-control bg-dark" name="firstname" value="{{firstname}}" style="color:white;">
+                    </div>
+                    <div class="col">
+                        <label for="lastname" class="form-label">Soyisim</label>
+                        <input type="text" class="form-control bg-dark" name="lastname" value="{{lastname}}" style="color:white;">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label for="password" class="form-label">Şifre</label>
+                        <input type="password" class="form-control bg-dark" name="password" style="color:white;">
+                    </div>
+                    <div class="col">
+                        <label for="repassword" class="form-label">Şifre Tekrar</label>
+                        <input type="password" class="form-control bg-dark" name="repassword" style="color:white;">
+                    </div>
+                </div>
+                <div class="mb-3"></div>
+                <div class="input-register">
+                    <input type="submit" value="Register" class="btn btn-primary">
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock  %}
+
+
+{% block js_files %}
+    <script src="{% static 'account/js/script.js' %}"></script>
+{% endblock  %}

@@ -1,0 +1,25 @@
+.list-group-item.active {
+    background-color:#910505;
+    border-color: #ba0909;
+    color: #fff;
+    border-radius: 10px;
+  }
+
+
+.login-hr {
+  border: none;
+  border-top: 2px solid #910505; 
+}
+
+.input-login {
+  text-align: center;
+}
+
+.input-register {
+  text-align: center;
+}
+
+.btn.btn-primary {
+  background-color: #910505;
+  border-color: #ba0909;
+}

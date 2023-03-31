@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static 'blog/css/style.css' %}">
+{% endblock  %}
+
+{% block title %}Blog Details{% endblock  %}
+
+{% block content %}
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-12">
+            <div class="container mb-3">
+                <div class="row">
+
+                    <div class="col-md-12">
+                        <div class="card-body">
+                            <h1 class="card-title" style="margin-bottom: 30px;">
+                                    {{blog.title|title}}
+                            </h1>
+                            <img src="{{blog.image.url}}" alt="" class="img-fluid" style="width:550px; height:350px; float:left; margin-right:20px; margin-bottom:20px;">
+                            <p class="card-text">
+                                {{blog.description|safe}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock  %}
+
+{% block js_files %}
+    <script src="{% static 'blog/js/script.js' %}"></script>
+{% endblock  %}
